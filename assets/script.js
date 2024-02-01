@@ -12,7 +12,6 @@ $("#hour14 .description").val(localStorage.getItem("hour14"));
 $("#hour15 .description").val(localStorage.getItem("hour15"));
 $("#hour16 .description").val(localStorage.getItem("hour16"));
 $("#hour17 .description").val(localStorage.getItem("hour17"));
-$("#hour20 .description").val(localStorage.getItem("hour20"));
 
 
 function hourTracker() {
@@ -43,11 +42,9 @@ function hourTracker() {
 }
 hourTracker();
 
- $(".saveBtn").on("click", function () {
-    console.log(this);
-    var text = $(this).siblings(".description").val();
-    var time = $(this).parent().attr("id");
-
-    //To set the items in the local storage.
-    localStorage.setItem(time, text);
-})
+ $('.saveBtn').click(function () {
+    var key = $(this).parent().attr("id");
+    var userInput = $(this).parent().children("textarea").val()
+    console.log(userInput)
+    localStorage.setItem(key, userInput);
+  })
