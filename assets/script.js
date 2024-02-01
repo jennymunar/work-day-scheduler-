@@ -23,7 +23,7 @@ function hourTracker() {
         var blockHour = parseInt($(this).attr("id").split("hour")[1]);
         console.log( blockHour, currentHour)
 
-        //To check on where we are in time (Past, present or future) 
+        //To check where we are in time (Past, present or future) 
         if (blockHour < currentHour) {
             $(this).addClass("past");
             $(this).removeClass("future");
